@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <title>Contacto</title>
+</head>
+<body>
+    <div class="container mt-5 mb-5">
+        <div class="titulo">
+            <h1>Mercy Developer</h1>
+            <p>Recuerda seguirnos en nuestras redes sociales.</p>
+        </div>
+        
+        <section class="medios-sociales">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+        <br>
+        
+        <div class="form-container">
+            <form [formGroup]="ubicanosForm" (ngSubmit)="onSubmit()">
+                <h2>Contáctanos</h2>
+                <h5>Por favor completa este formulario</h5>
+            
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Ingresa tu nombre" required>
+                    <div *ngIf="ubicanosForm.get('nombre')?.invalid && ubicanosForm.get('nombre')?.touched" class="text-danger">
+                      El nombre es obligatorio.
+                    </div>
+                  </div>
+            
+                  <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" formControlName="apellido" placeholder="Ingresa tu apellido" required>
+                    <div *ngIf="ubicanosForm.get('apellido')?.invalid && ubicanosForm.get('apellido')?.touched" class="text-danger">
+                      El apellido es obligatorio.
+                    </div>
+                  </div>
+            
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" formControlName="email" placeholder="Ingresa tu correo electrónico" required>
+                    <div *ngIf="ubicanosForm.get('email')?.invalid && ubicanosForm.get('email')?.touched" class="text-danger">
+                      El correo es obligatorio y debe ser válido.
+                    </div>
+                  </div>
+            
+                  <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" id="telefono" formControlName="telefono" placeholder="Ingresa tu número de teléfono" required>
+                    <div *ngIf="ubicanosForm.get('telefono')?.invalid && ubicanosForm.get('telefono')?.touched" class="text-danger">
+                      El teléfono es obligatorio y debe ser numérico.
+                    </div>
+                  </div>
+            
+                  <div class="mb-3">
+                    <label for="mensaje" class="form-label">Motivo de la visita</label>
+                    <textarea class="form-control" id="mensaje" formControlName="mensaje" rows="3" placeholder="Escribe tu mensaje" required></textarea>
+                    <div *ngIf="ubicanosForm.get('mensaje')?.invalid && ubicanosForm.get('mensaje')?.touched" class="text-danger">
+                      El mensaje es obligatorio.
+                    </div>
+                  </div>
+            
+                  <button type="submit" class="btn btn-primary" [disabled]="ubicanosForm.invalid">Enviar</button>
+                  <div *ngIf="mensajeConfirmacion" class="mensaje-confirmacion" style="margin-top: 20px; color: blue; font-weight: bold;">
+                    {{ mensajeConfirmacion }}
+                  </div>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>

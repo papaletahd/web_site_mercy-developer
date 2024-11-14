@@ -1,0 +1,89 @@
+.text-center {
+    text-align: center; 
+    color: #333; 
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 700;
+}
+
+.text-center h2 {
+    font-size: 2.5em;
+    font-weight: 600; 
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem; 
+}
+
+.img-small {
+    width: 100%;
+    height: auto;
+    max-height: 150px; 
+    object-fit: cover; 
+  }
+  
+  
+  .card {
+    max-width: 300px; 
+    margin: auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .container .row {
+    justify-content: center; 
+  }
+  
+  .portada {
+    position: relative;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+  }
+
+  .portada img {
+    padding-top: 50px;
+    object-fit: cover; 
+    width: 98%;
+    height: 100%;
+    filter: brightness(85%); 
+  }
+
+  .portada-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 10; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 60px;
+  border-radius: 80px;
+  }
+
+  .portada-texto h1 {
+    font-size: 3rem;
+  }
+
+  .portada-texto p {
+    font-size: 1.25rem;
+    font-weight: 100;
+  }
+
+  h1, p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
